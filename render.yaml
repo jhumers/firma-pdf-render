@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: firma-pdf-planint
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: API_KEY
+        value: CAMBIA_ESTA_CLAVE_SECRETA
+    plan: free
